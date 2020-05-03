@@ -6,7 +6,7 @@ const {serverInfo_id, serverFeedback_id,
     botCommands_id,
     voiceChat_id, botMusic_id, generalVoice_id, music_id, 
     follower_id, trueFollower_id, favorite_id, patron_id
-} = require("./config.json");
+} = require("../config.json");
 const Discord = require("discord.js");
 
 module.exports = {
