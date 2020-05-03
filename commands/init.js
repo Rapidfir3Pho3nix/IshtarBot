@@ -16,7 +16,6 @@ module.exports = {
         return;
 
         //rule channel initialization
-
         let serverInfo = message.guild.channels.cache.get(serverInfo_id);
         let serverFeedback = message.guild.channels.cache.get(serverFeedback_id);
 

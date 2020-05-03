@@ -1,5 +1,4 @@
 const { prefix, token, owner_id, welcome_id } = require("./config.json");
-
 const fs = require("fs");
 
 const Discord = require("discord.js");
@@ -13,9 +12,7 @@ for (const file of commandFiles) {
     client.commands.set(command.name, command);
 }
 
-client.once('ready', () => {
-    console.log('Ready!');
-});
+client.once('ready', () => { log(false, 'Ready!'); });
 
 client.on('message', message => {
     // ignore bot messages and messages that dont start with prefix and messages not sent by owner
@@ -60,14 +57,13 @@ client.on('guildMemberAdd', member => {
         .setFooter(`Temple of Ishtar—${member.guild.memberCount}`);
 
     channel.send(welcomeEmbed)
-        .then(message => console.log(`Sent message: ${message.content}`))
+        .then(message => log(false, `Sent message: ${message.content}`))
         .catch(console.error);
 });
 
 client.login(token);
 
 // helper functions
-
 function log() {
     let args = [...arguments];
     let isError = args.shift();
