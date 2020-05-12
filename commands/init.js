@@ -1,7 +1,7 @@
 const {serverInfo_id, serverFeedback_id, 
     announcements_id, usInfo_id, jpInfo_id, welcome_id, selfRole_id, affiliates_id,
     ishTemple_id, ishSacredTemple_id, waifuTemples_id, sacredWaifuTemples_id,
-    general_id, usFGO_id, jpFGO_id, usGacha_id, usFriend_id, jpFriend_id,
+    general_id, usFGO_id, jpFGO_id, usGacha_id, jpGacha_id, usFriend_id, jpFriend_id,
     offTopic_id, gaming_id, entertainment_id, art_id, mature_id, 
     botCommands_id,
     voiceChat_id, botMusic_id, generalVoice_id, music_id, 
@@ -53,11 +53,20 @@ module.exports = {
         let music = message.guild.channels.cache.get(music_id);
         
         let heartGem = message.guild.emojis.cache.find(emoji => emoji.name === 'heartGem');
+        let pouting = message.guild.emojis.cache.find(emoji => emoji.name === 'ishyPouting');
+
+        console.log(pouting);
 
         let follower = message.guild.roles.cache.get(follower_id);
         let trueFollower = message.guild.roles.cache.get(trueFollower_id);
         let favorite = message.guild.roles.cache.get(favorite_id);
         let patron = message.guild.roles.cache.get(patron_id);
+
+        //await affiliates.send(`**Ereshkigal Praising Server** - Ehhhh? Well, whatever. Go here if you want to praise my sister, Ereshkigal...Baka.`);
+        await affiliates.send(`${pouting}`);
+        await affiliates.send("https://discord.gg/vmeDrGE");
+
+        return;
 
         const welcomeImage = new Discord.MessageAttachment('./img/ishtar_welcome.png');
         await serverInfo.send(welcomeImage);
