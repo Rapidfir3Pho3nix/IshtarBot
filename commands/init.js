@@ -13,9 +13,9 @@ module.exports = {
     name: "init",
     description: "Initialize the administrative server channels with messages from Ishtar.",
     async execute(message, args) {
-        return;
+        // return;
 
-        //rule channel initialization
+        // rule channel initialization
         let serverInfo = message.guild.channels.cache.get(serverInfo_id);
         let serverFeedback = message.guild.channels.cache.get(serverFeedback_id);
 
@@ -55,23 +55,19 @@ module.exports = {
         let heartGem = message.guild.emojis.cache.find(emoji => emoji.name === 'heartGem');
         let pouting = message.guild.emojis.cache.find(emoji => emoji.name === 'ishyPouting');
 
-        console.log(pouting);
-
         let follower = message.guild.roles.cache.get(follower_id);
         let trueFollower = message.guild.roles.cache.get(trueFollower_id);
         let favorite = message.guild.roles.cache.get(favorite_id);
         let patron = message.guild.roles.cache.get(patron_id);
 
-        //await affiliates.send(`**Ereshkigal Praising Server** - Ehhhh? Well, whatever. Go here if you want to praise my sister, Ereshkigal...Baka.`);
-        await affiliates.send(`${pouting}`);
-        await affiliates.send("https://discord.gg/vmeDrGE");
-
-        return;
+        // await affiliates.send(`**Ereshkigal Praising Server** - Ehhhh? Well, whatever. Go here if you want to praise my sister, Ereshkigal...Baka.`);
+        // await affiliates.send(`${pouting}`);
+        // await affiliates.send("https://discord.gg/vmeDrGE");
 
         const welcomeImage = new Discord.MessageAttachment('./img/ishtar_welcome.png');
         await serverInfo.send(welcomeImage);
 
-        await serverInfo.send('Welcome to the Temple of Ishtar, a community about worshipping me, the Goddess Ishtar!\nInvite Link: https://discord.gg/gDHgVqN');
+        await serverInfo.send('Invite Link: https://discord.gg/tEThA9Y');
 
         const rulesImage = new Discord.MessageAttachment('./img/ishtar_rules.png');
         await serverInfo.send(rulesImage);
@@ -112,12 +108,12 @@ module.exports = {
             .setDescription(`NSFW Content is allowed here as long as images are posted in the proper channels and as long as my followers are following Discord's guidelines properly. This includes, but is not limited to: no porn or sexual images of lolis or shotas; no posting of images that show extreme gore or violence, no images that are extremely disturbing whether that be vomit, blood, poop, etc. To see the NSFW channels you will need the nsfw role that you can assign yourself in ${selfRole}.`);
         await serverInfo.send(nsfwEmbed);
 
-        //Self role channel initialization
-        const roleImage = new Discord.MessageAttachment('./img/ishtar_roles.png');
-        await selfRole.send(roleImage);
+        // Self role channel initialization
+        // const roleImage = new Discord.MessageAttachment('./img/ishtar_roles.png');
+        // await selfRole.send(roleImage);
 
-        await selfRole.send(`By default, everyone has the ${follower} role. I mean, why else would you be here if you weren't one of my followers?! As you spend more time here, you'll slowly gain experience which will increase your rank. The required amount of experience for higher ranks can be found below.`);
-        await selfRole.send("```C++\n0                - Followers of Ishtar\n5000             - Faithful Followers of Ishtar\n10000            - Disciples of Ishtar\n25000            - Prophets of Venus\n50000            - Apostles of the Heavens\n100000           - Divine Followers of Ishtar\n\nYou get 10 to 20 XP per message on a 2 minute cooldown.\n//So spamming won't help you level up quickly```");
-        await selfRole.send(`In addition to these roles are a few other special roles:\n\n${trueFollower} - you can only get this role if you show proof of having me at lv. 100 and with maxed skills.\n${favorite} - you can only get this role if you show proof of having me at Bond 10\n${patron} - you can only get this role by supporting server by using Nitro boosts\n\nThe other roles are self-assignable. These roles will determine what color your username is so choose wisely!`);
+        // await selfRole.send(`By default, everyone has the ${follower} role. I mean, why else would you be here if you weren't one of my followers?! As you spend more time here, you'll slowly gain experience which will increase your rank. The required amount of experience for higher ranks can be found below.`);
+        // await selfRole.send("```C++\n0                - Followers of Ishtar\n5000             - Faithful Followers of Ishtar\n10000            - Disciples of Ishtar\n25000            - Prophets of Venus\n50000            - Apostles of the Heavens\n100000           - Divine Followers of Ishtar\n\nYou get 10 to 20 XP per message on a 2 minute cooldown.\n//So spamming won't help you level up quickly```");
+        // await selfRole.send(`In addition to these roles are a few other special roles:\n\n${trueFollower} - you can only get this role if you show proof of having me at lv. 100 and with maxed skills.\n${favorite} - you can only get this role if you show proof of having me at Bond 10\n${patron} - you can only get this role by supporting server by using Nitro boosts\n\nThe other roles are self-assignable. These roles will determine what color your username is so choose wisely!`);
     },
 };
